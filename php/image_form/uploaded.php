@@ -10,6 +10,9 @@ if (!empty($_FILES)) {
     //Проверка на тип файла (изображение).
     if ($fileType[0] != 'image') die('The file is not an image!');
 
+    //Создание папки, если отсутствует.
+    if (!file_exists('img')) mkdir('img');
+
     //Проверка на расширение изображения и загрузка на сервер.
     foreach ($fileExtensions as $extension) {
 
